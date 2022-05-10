@@ -1,0 +1,19 @@
+.container {
+    margin: 0 auto;
+    width: 30%;
+    margin-top: 175px;
+  }
+  
+  .reg-form-full-width {
+    width: 100%;
+  }
+  .text-center {
+    text-align: center;
+  }
+  
+  .reg-pad {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: cornflowerblue;
+  }
+  

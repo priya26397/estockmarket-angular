@@ -1,0 +1,20 @@
+{
+  "user": [
+    {
+      "firstName": "Amuthan",
+      "lastName": "E",
+      "emailId": "amuthanelumalai@gmail.com",
+      "phoneNumber": 7502037705,
+      "password": "12345678",
+      "id": 1
+    },
+    {
+      "firstName": "sdasd",
+      "lastName": "asdasasd",
+      "emailId": "asd2w@gmail.com",
+      "phoneNumber": 1234567891,
+      "password": "12345678923",
+      "id": 2
+    }
+  ]
+}
