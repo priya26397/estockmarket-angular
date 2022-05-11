@@ -1,0 +1,35 @@
+<div class="container">
+    <mat-card>
+        <mat-card-title class="text-center stock-pad">Add New Stock</mat-card-title>
+        <form class="stock-form" [formGroup]="stockForm" (ngSubmit)="onSubmit()">
+            <div>
+                <mat-form-field class="stock-form-full-width" appearance="fill">
+                    <mat-label>Company</mat-label>
+                    <mat-select formControlName="companyName">
+                        <mat-option *ngFor="let company of companies" [value]="company">
+                            {{company.companyName}}
+                        </mat-option>
+                    </mat-select>
+                    <mat-error
+                        *ngIf="stockForm.get('company')?.touched && stockForm.get('company')?.hasError('required')">
+                        Select Company</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="stock-form-full-width" appearance="fill">
+                    <mat-label>Stock price</mat-label>
+                    <input  matInput formControlName="price" placeholder="Enter the stock price">
+                    <mat-error *ngIf="stockForm.get('price')?.touched && stockForm.get('price')?.hasError('required')">
+                        Enter Stock price</mat-error>
+                    <mat-error *ngIf="stockForm.get('price')?.hasError('pattern')">
+                        Enter value with 2 digits after decimal</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-card-actions class="text-center">
+                    <button mat-raised-button [disabled]="stockForm.invalid" color="primary">Add Stock</button>
+                </mat-card-actions>
+            </div>
+        </form>
+    </mat-card>
+</div>

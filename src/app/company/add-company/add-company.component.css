@@ -1,17 +1,17 @@
 .container {
     margin: 0 auto;
     width: 30%;
-    margin-top: 150px;
+    margin-top: 20px;
   }
   
-  .reg-form-full-width {
+  .comp-form-full-width {
     width: 100%;
   }
   .text-center {
     text-align: center;
   }
   
-  .reg-pad {
+  .comp-pad {
     padding-top: 10px;
     padding-bottom: 10px;
     color: cornflowerblue;

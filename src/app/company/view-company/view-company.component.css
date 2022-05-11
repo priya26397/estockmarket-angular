@@ -1,0 +1,15 @@
+table {
+    width: 100%;
+  }
+  .mat-header-cell {
+    color: black;
+    font-weight: bolder;
+    font-size: 14px;
+    background: lightgrey;
+}
+
+.container {
+    margin: auto;
+    width: 85%;
+    margin-top: 20px;
+}

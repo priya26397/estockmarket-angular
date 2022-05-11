@@ -9,18 +9,36 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import { MatNativeDateModule, MatOptionModule } from '@angular/material/core';
+import { MatSelectModule } from '@angular/material/select';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatTableModule } from '@angular/material/table';
+import {MatDatepickerModule} from '@angular/material/datepicker';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './user/register/register.component';
 import { LoginComponent } from './user/login/login.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { HeaderComponent } from './header/header.component';
+import { FooterComponent } from './footer/footer.component';
+import { AddCompanyComponent } from './company/add-company/add-company.component';
+import { ViewCompanyComponent } from './company/view-company/view-company.component';
+import { AddStockComponent } from './stock/add-stock/add-stock.component';
+import { ViewStockComponent } from './stock/view-stock/view-stock.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegisterComponent,
-    LoginComponent
+    LoginComponent,
+    HeaderComponent,
+    FooterComponent,
+    AddCompanyComponent,
+    ViewCompanyComponent,
+    AddStockComponent,
+    ViewStockComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +52,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatToolbarModule,
+    MatOptionModule,
+    MatNativeDateModule,
+    MatSelectModule,
+    MatPaginatorModule,
+    MatTableModule,
+    MatDatepickerModule,
   ],
   providers: [],
   bootstrap: [AppComponent]

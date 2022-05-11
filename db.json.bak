@@ -7,13 +7,82 @@
       "phoneNumber": 7502037705,
       "password": "12345678",
       "id": 1
+    }
+  ],
+  "company": [
+    {
+      "companyCode": "CTS",
+      "companyName": "CTS",
+      "ceo": "Name",
+      "turnOver": 10000000000,
+      "website": "http://google.com",
+      "stockExchange": "Nse",
+      "id": 1
     },
     {
-      "firstName": "sdasd",
-      "lastName": "asdasasd",
-      "emailId": "asd2w@gmail.com",
-      "phoneNumber": 1234567891,
-      "password": "12345678923",
+      "companyCode": "tcs",
+      "companyName": "tcs",
+      "ceo": "tcs",
+      "turnOver": 20000000000000,
+      "website": "http://google.com",
+      "stockExchange": "Bse",
+      "id": 2
+    },
+    {
+      "companyCode": "company1",
+      "companyName": "company1",
+      "ceo": "jack",
+      "turnOver": 1000000000,
+      "website": "http://company.com",
+      "stockExchange": "Bse",
+      "id": 3
+    },
+    {
+      "companyCode": "company2",
+      "companyName": "company2",
+      "ceo": "arun",
+      "turnOver": 10000000,
+      "website": "http://company2.com",
+      "stockExchange": "Bse",
+      "id": 4
+    },
+    {
+      "companyCode": "company3",
+      "companyName": "company3",
+      "ceo": "john",
+      "turnOver": 10000000,
+      "website": "http://company3.com",
+      "stockExchange": "Bse",
+      "id": 5
+    },
+    {
+      "companyCode": "jpl",
+      "companyName": "jack private limited",
+      "ceo": "jack",
+      "turnOver": 200110210,
+      "website": "http://jpl.com",
+      "stockExchange": "Nse",
+      "id": 6
+    }
+  ],
+  "sector": [],
+  "stock": [
+    {
+      "companyName": {
+        "companyCode": "CTS",
+        "companyName": "CTS",
+        "ceo": "Name",
+        "turnOver": 10000000000,
+        "website": "http://google.com",
+        "stockExchange": "Nse",
+        "id": 1
+      },
+      "price": "15",
+      "id": 1
+    },
+    {
+      "companyName": "tcs",
+      "price": "15",
       "id": 2
     }
   ]
