@@ -1,3 +1,5 @@
+import { DatePipe } from '@angular/common';
+import { HttpParams } from '@angular/common/http';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { MatPaginator } from '@angular/material/paginator';
@@ -19,11 +21,11 @@ export class ViewStockComponent implements OnInit {
   paginator!: MatPaginator;
   dataSource:any;
   showTable:boolean=false;
-   constructor(private companyService:CompanyService,private stockService:StockService) { }
+   constructor(private companyService:CompanyService,private stockService:StockService,private datePipe:DatePipe) { }
 
   ngOnInit(): void {
     this.viewStockForm = new FormGroup({
-      companyName:new FormControl('',Validators.required),
+      companyCode:new FormControl('',Validators.required),
       start: new FormControl(new Date()),
       end: new FormControl(new Date()),
     });
@@ -35,7 +37,9 @@ export class ViewStockComponent implements OnInit {
 
   onSubmit(){
     console.log(this.viewStockForm.value);
-    this.stockService.getStockByCompanyName(this.viewStockForm.value.companyName.companyName).subscribe((response:any)=>{
+    const startDate=this.datePipe.transform(this.viewStockForm.value.start, 'dd-MM-yyyy');
+    const endDate=this.datePipe.transform(this.viewStockForm.value.end, 'dd-MM-yyyy');
+    this.stockService.getStockByCompanyName(this.viewStockForm.value.companyCode.companyCode,startDate,endDate).subscribe((response:any)=>{
       console.log(response);
       if(response!=null){
         this.showTable=true;

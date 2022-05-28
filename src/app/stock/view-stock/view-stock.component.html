@@ -4,9 +4,9 @@
         <span class="padding-lr-10">
             <mat-form-field class="stock-form-full-width" appearance="fill">
                 <mat-label>Company</mat-label>
-                <mat-select formControlName="companyName">
+                <mat-select formControlName="companyCode">
                     <mat-option *ngFor="let company of companies" [value]="company">
-                        {{company.companyName}}
+                        {{company.companyCode}}
                     </mat-option>
                 </mat-select>
                 <mat-error
@@ -42,12 +42,12 @@
         </mat-card-content>
         <mat-card-title>Stock List</mat-card-title>
         <mat-card-content>
-            <div class="mat-elevation-z8">
+            <div class="height-table mat-elevation-z8">
                 <table mat-table [dataSource]="dataSource">
                     <!-- Code Column -->
                     <ng-container matColumnDef="companyName">
-                        <th mat-header-cell *matHeaderCellDef> Company Name </th>
-                        <td mat-cell *matCellDef="let element"> {{element.companyName}} </td>
+                        <th mat-header-cell *matHeaderCellDef> Company Code </th>
+                        <td mat-cell *matCellDef="let element"> {{element.companyCode}} </td>
                     </ng-container>
 
                     <!-- name Column -->

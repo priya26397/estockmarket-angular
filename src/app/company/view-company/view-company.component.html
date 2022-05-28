@@ -5,11 +5,11 @@
         </mat-card-content>
         <mat-card-title>Company List</mat-card-title>
         <mat-card-content>
-            <div class="mat-elevation-z8">
+            <div class="height-table mat-elevation-z8">
                 <table mat-table [dataSource]="dataSource">
                     <!-- Code Column -->
                     <ng-container matColumnDef="companyCode">
-                        <th mat-header-cell *matHeaderCellDef> Company Code </th>
+                        <th mat-header-cell *matHeaderCellDef> Code </th>
                         <td mat-cell *matCellDef="let element"> {{element.companyCode}} </td>
                     </ng-container>
 
@@ -27,17 +27,25 @@
                     <!-- Symbol Column -->
                     <ng-container matColumnDef="turnOver">
                         <th mat-header-cell *matHeaderCellDef> Turnover </th>
-                        <td mat-cell *matCellDef="let element"> {{element.turnOver}} </td>
+                        <td mat-cell *matCellDef="let element"> {{element.companyTurnover}} </td>
                     </ng-container>
                     <!-- Symbol Column -->
                     <ng-container matColumnDef="stockExchange">
                         <th mat-header-cell *matHeaderCellDef> Stock Exchange </th>
-                        <td mat-cell *matCellDef="let element"> {{element.stockExchange}} </td>
+                        <td mat-cell *matCellDef="let element"> {{element.stockExchangeName}} </td>
                     </ng-container>
                     <!-- Symbol Column -->
                     <ng-container matColumnDef="website">
                         <th mat-header-cell *matHeaderCellDef> Website </th>
-                        <td mat-cell *matCellDef="let element"> {{element.website}} </td>
+                        <td mat-cell *matCellDef="let element"> {{element.companyWebsite}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="sectorName">
+                        <th mat-header-cell *matHeaderCellDef> Sector Name </th>
+                        <td mat-cell *matCellDef="let element"> {{element.sectorName}} </td>
+                    </ng-container>
+                    <ng-container matColumnDef="description">
+                        <th mat-header-cell *matHeaderCellDef> Description </th>
+                        <td mat-cell *matCellDef="let element"> {{element.companyDescription}} </td>
                     </ng-container>
 
                     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

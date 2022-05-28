@@ -1,0 +1,29 @@
+<div class="container">
+    <mat-card>
+        <mat-card-title class="text-center sector-pad">Add New Sector</mat-card-title>
+        <form class="sector-form" [formGroup]="sectorForm" (ngSubmit)="onSubmit()">
+            <div>
+                <mat-form-field class="sector-form-full-width" appearance="fill">
+                    <mat-label>Sector Name</mat-label>
+                    <input  matInput formControlName="sectorName" placeholder="Enter the sector name">
+                    <mat-error
+                        *ngIf="sectorForm.get('sectorName')?.touched && sectorForm.get('sectorName')?.hasError('required')">
+                        Enter Sector Name</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-form-field class="sector-form-full-width" appearance="fill">
+                    <mat-label>Sector Description</mat-label>
+                    <input  matInput formControlName="description" placeholder="Enter the sector description">
+                    <mat-error *ngIf="sectorForm.get('description')?.touched && sectorForm.get('description')?.hasError('required')">
+                        Enter sector description</mat-error>
+                </mat-form-field>
+            </div>
+            <div>
+                <mat-card-actions class="text-center">
+                    <button mat-raised-button [disabled]="sectorForm.invalid" color="primary">Add sector</button>
+                </mat-card-actions>
+            </div>
+        </form>
+    </mat-card>
+</div>

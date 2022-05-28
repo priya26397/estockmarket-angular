@@ -13,7 +13,7 @@ export class ViewCompanyComponent implements OnInit {
   dataSource: any;
 
   constructor(private companyService:CompanyService) { }
-  displayedColumns: string[] = ['companyCode', 'companyName', 'ceo','turnOver','website','stockExchange'];
+  displayedColumns: string[] = ['companyCode', 'companyName', 'ceo','turnOver','website','stockExchange','sectorName','description'];
   
 
   @ViewChild(MatPaginator)

@@ -96,6 +96,11 @@
       "companyName": "company1",
       "price": "16",
       "id": 6
+    },
+    {
+      "companyName": "company2",
+      "price": "23",
+      "id": 7
     }
   ]
 }

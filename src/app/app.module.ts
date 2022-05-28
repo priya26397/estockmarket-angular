@@ -27,6 +27,9 @@ import { AddCompanyComponent } from './company/add-company/add-company.component
 import { ViewCompanyComponent } from './company/view-company/view-company.component';
 import { AddStockComponent } from './stock/add-stock/add-stock.component';
 import { ViewStockComponent } from './stock/view-stock/view-stock.component';
+import { ViewSectorComponent } from './sector/view-sector/view-sector.component';
+import { AddSectorComponent } from './sector/add-sector/add-sector.component';
+import { DatePipe } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -38,7 +41,9 @@ import { ViewStockComponent } from './stock/view-stock/view-stock.component';
     AddCompanyComponent,
     ViewCompanyComponent,
     AddStockComponent,
-    ViewStockComponent
+    ViewStockComponent,
+    ViewSectorComponent,
+    AddSectorComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +66,7 @@ import { ViewStockComponent } from './stock/view-stock/view-stock.component';
     MatTableModule,
     MatDatepickerModule,
   ],
-  providers: [],
+  providers: [DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
