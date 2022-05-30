@@ -3,6 +3,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { SnackbarService } from 'src/app/service/snackbar.service';
 import { UserService } from 'src/app/service/user.service';
+import jwt_decode from "jwt-decode";
 
 @Component({
   selector: 'app-login',
@@ -25,8 +26,11 @@ export class LoginComponent implements OnInit {
       console.log(response);
       if(response && response.token){
         this.snackbar.openSnackBar("User Logged in successfully","x");
+        let decodeValue:any=jwt_decode(response.token)
         sessionStorage.setItem("token",response.token);
+        sessionStorage.setItem("userName",decodeValue.sub);
         this.router.navigate(["/viewCompany"]);
+        this.userService.setUserFlag(true);
       }
     })
   }

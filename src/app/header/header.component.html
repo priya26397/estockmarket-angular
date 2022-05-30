@@ -10,7 +10,13 @@
       Sector
     </a>
     <span class="example-spacer"></span>
-    <button mat-icon-button class="example-icon" aria-label="Example icon-button with heart icon">
-        <mat-icon matPrefix>person_outline</mat-icon>
+    <span  *ngIf="userLogin">
+      Welcome {{username}}
+    </span>
+    <button *ngIf="userLogin" (click)=redirect() mat-button class="example-icon" aria-label="Example icon-button with heart icon">
+        Logout
     </button>
+    <button *ngIf="!userLogin" routerLink='/login' mat-button class="example-icon" aria-label="Example icon-button with heart icon">
+      Login
+  </button>
   </mat-toolbar>
