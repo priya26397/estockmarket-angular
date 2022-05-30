@@ -22,8 +22,7 @@ export class AddSectorComponent implements OnInit {
 
   onSubmit(){
     this.sectorService.createSector(this.sectorForm.value).subscribe((response:any)=>{
-      console.log(response);
-      if(response.status===200){
+      if(response !=null){
         this.snackbarService.openSnackBar("Sector Added succesfully","x")
         this.sectorForm.reset();
         this.formDirective.resetForm();

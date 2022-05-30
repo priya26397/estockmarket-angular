@@ -20,9 +20,9 @@ export class StockService {
     return this.httpClient.post(regUrl, data,httpOptions);
   }
 
-  aggregateStockById(params?:HttpParams){
-    const fetchStock=this.url+"/api/v1.0/query/market/stock/aggregate"
-    return this.httpClient.get(fetchStock,{params:params});
+  aggregateStockById(code:string,sDate:any,eDate:any){
+    const fetchStock=this.url+"/api/v1.0/query/market/stock/aggregate?companyCode="+code+"&startDate="+sDate+"&endDate="+eDate;
+    return this.httpClient.get(fetchStock);
   }
 
   getStockByCompanyName(code:string,sDate:any,eDate:any){

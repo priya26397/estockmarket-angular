@@ -12,7 +12,7 @@ import { StockService } from 'src/app/service/stock.service';
 export class AddStockComponent implements OnInit {
 
   stockForm: FormGroup = new FormGroup({
-    companyName: new FormControl(null, Validators.required),
+    companyCode: new FormControl(null, Validators.required),
     price:new FormControl(null, [Validators.required, Validators.pattern('^(0|[1-9]\\d*)?(\\.\\d+)?(?<=\\d)$')]),
   });
   companies: any;
@@ -28,14 +28,15 @@ export class AddStockComponent implements OnInit {
 
   onSubmit(){
     const stock={
-      companyName:this.stockForm.value.companyName.companyName,
+      companyCode:this.stockForm.value.companyCode,
       price:this.stockForm.value.price
     }
     this.stockService.registerStock(stock).subscribe((response:any)=>{
-      
-      this.snackbar.openSnackBar("Stocks added successfully","x");
-      this.stockForm.reset();
-      this.formDirective.resetForm();
+      if(response){
+        this.snackbar.openSnackBar("Stocks added successfully","x");
+        this.stockForm.reset();
+        this.formDirective.resetForm();
+      }
     })
   }
 }

@@ -16,11 +16,13 @@ export class ViewStockComponent implements OnInit {
 
   viewStockForm!: FormGroup;
   companies:any;
-  displayedColumns: string[] = ['companyName', 'price'];
+  displayedColumns: string[] = ['companyName', 'price','date','time'];
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
   dataSource:any;
   showTable:boolean=false;
+  stockAggregate:any;
+  showAggregate:boolean=false;
    constructor(private companyService:CompanyService,private stockService:StockService,private datePipe:DatePipe) { }
 
   ngOnInit(): void {
@@ -45,6 +47,14 @@ export class ViewStockComponent implements OnInit {
         this.showTable=true;
         this.dataSource = new MatTableDataSource<any>(response);
         this.dataSource.paginator = this.paginator;
+      }
+      
+    })
+    this.stockService.aggregateStockById(this.viewStockForm.value.companyCode.companyCode,startDate,endDate).subscribe((response:any)=>{
+      console.log(response);
+      if(response.length>0){
+        this.showAggregate=true;
+        this.stockAggregate=response[0];
       }
       
     })

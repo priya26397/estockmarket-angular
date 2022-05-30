@@ -5,9 +5,9 @@
             <div>
                 <mat-form-field class="stock-form-full-width" appearance="fill">
                     <mat-label>Company</mat-label>
-                    <mat-select formControlName="companyName">
-                        <mat-option *ngFor="let company of companies" [value]="company">
-                            {{company.companyName}}
+                    <mat-select formControlName="companyCode">
+                        <mat-option *ngFor="let company of companies" [value]="company.companyCode">
+                            {{company.companyCode}}
                         </mat-option>
                     </mat-select>
                     <mat-error
@@ -18,7 +18,7 @@
             <div>
                 <mat-form-field class="stock-form-full-width" appearance="fill">
                     <mat-label>Stock price</mat-label>
-                    <input  matInput formControlName="price" placeholder="Enter the stock price">
+                    <input type="number" matInput formControlName="price" placeholder="Enter the stock price">
                     <mat-error *ngIf="stockForm.get('price')?.touched && stockForm.get('price')?.hasError('required')">
                         Enter Stock price</mat-error>
                     <mat-error *ngIf="stockForm.get('price')?.hasError('pattern')">
