@@ -1,6 +1,7 @@
 .container {
     margin: 0 auto;
     width: 30%;
+    padding-bottom: 50px;
   }
   
   .comp-form-full-width {

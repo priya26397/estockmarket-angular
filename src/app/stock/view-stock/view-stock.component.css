@@ -23,6 +23,7 @@ table {
 
 .table-container {
     width: 50%;
+    padding-bottom: 50px;
 }
 
 .aggregate-center{
