@@ -23,6 +23,7 @@ export class ViewStockComponent implements OnInit {
   showTable:boolean=false;
   stockAggregate:any;
   showAggregate:boolean=false;
+  stockData:any;
    constructor(private companyService:CompanyService,private stockService:StockService,private datePipe:DatePipe) { }
 
   ngOnInit(): void {
@@ -38,20 +39,18 @@ export class ViewStockComponent implements OnInit {
   }
 
   onSubmit(){
-    console.log(this.viewStockForm.value);
     const startDate=this.datePipe.transform(this.viewStockForm.value.start, 'dd-MM-yyyy');
     const endDate=this.datePipe.transform(this.viewStockForm.value.end, 'dd-MM-yyyy');
     this.stockService.getStockByCompanyName(this.viewStockForm.value.companyCode.companyCode,startDate,endDate).subscribe((response:any)=>{
-      console.log(response);
       if(response!=null){
         this.showTable=true;
+        this.stockData=response;
         this.dataSource = new MatTableDataSource<any>(response);
         this.dataSource.paginator = this.paginator;
       }
       
     })
     this.stockService.aggregateStockById(this.viewStockForm.value.companyCode.companyCode,startDate,endDate).subscribe((response:any)=>{
-      console.log(response);
       if(response.length>0){
         this.showAggregate=true;
         this.stockAggregate=response[0];

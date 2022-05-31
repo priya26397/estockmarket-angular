@@ -30,6 +30,8 @@ import { ViewStockComponent } from './stock/view-stock/view-stock.component';
 import { ViewSectorComponent } from './sector/view-sector/view-sector.component';
 import { AddSectorComponent } from './sector/add-sector/add-sector.component';
 import { DatePipe } from '@angular/common';
+import { NgChartsModule } from 'ng2-charts';
+import { StocksGraphComponent } from './stock/view-stock/stocks-graph/stocks-graph.component';
 
 @NgModule({
   declarations: [
@@ -43,7 +45,8 @@ import { DatePipe } from '@angular/common';
     AddStockComponent,
     ViewStockComponent,
     ViewSectorComponent,
-    AddSectorComponent
+    AddSectorComponent,
+    StocksGraphComponent
   ],
   imports: [
     BrowserModule,
@@ -65,6 +68,7 @@ import { DatePipe } from '@angular/common';
     MatPaginatorModule,
     MatTableModule,
     MatDatepickerModule,
+    NgChartsModule
   ],
   providers: [DatePipe],
   bootstrap: [AppComponent]

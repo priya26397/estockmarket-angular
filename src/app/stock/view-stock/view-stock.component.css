@@ -24,9 +24,15 @@ table {
 .table-container {
     width: 50%;
     padding-bottom: 50px;
+    float:left;
 }
 
 .aggregate-center{
   text-align: center;
     font-size: 16px;
+}
+.graph-container{
+  width: 50%; 
+  float:right;
+  padding-top: 100px;
 }
