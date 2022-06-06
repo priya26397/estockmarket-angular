@@ -34,4 +34,15 @@ export class CompanyService {
     const fetchUser=this.url+"/api/v1.0/query/market/company/view/"+code;
     return this.httpClient.get(fetchUser);
   }
+
+  deleteCompany(code:any){
+    let token=sessionStorage.getItem('token');
+    const httpOptions={
+      headers:new HttpHeaders({
+        Authorization:'Bearer '+token
+      })
+    }
+    const registerUrl="http://localhost:6092/api/v1.0/command/market/company/delete/"+code;
+    return this.httpClient.delete(registerUrl,httpOptions);
+  }
 }

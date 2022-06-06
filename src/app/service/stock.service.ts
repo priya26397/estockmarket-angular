@@ -29,4 +29,15 @@ export class StockService {
     const fetchStock=this.url+"/api/v1.0/query/market/stock/get?companyCode="+code+"&startDate="+sDate+"&endDate="+eDate;
     return this.httpClient.get(fetchStock);
   }
+
+  delete(id:any){
+    let token=sessionStorage.getItem('token');
+    const httpOptions={
+      headers:new HttpHeaders({
+        Authorization:'Bearer '+token
+      })
+    }
+    const regUrl="http://localhost:6092/api/v1.0/command/market/stock/delete/"+id;
+    return this.httpClient.delete(regUrl,httpOptions);
+  }
 }
