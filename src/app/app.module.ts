@@ -15,7 +15,9 @@ import { MatSelectModule } from '@angular/material/select';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatTableModule } from '@angular/material/table';
 import {MatDatepickerModule} from '@angular/material/datepicker';
-
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatStepperModule} from '@angular/material/stepper';
+import { MatDialogModule } from '@angular/material/dialog';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { RegisterComponent } from './user/register/register.component';
@@ -68,6 +70,9 @@ import { StocksGraphComponent } from './stock/view-stock/stocks-graph/stocks-gra
     MatPaginatorModule,
     MatTableModule,
     MatDatepickerModule,
+    MatCheckboxModule,
+    MatStepperModule,
+    MatDialogModule,
     NgChartsModule
   ],
   providers: [DatePipe],

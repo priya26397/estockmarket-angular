@@ -1,4 +1,6 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { StockService } from 'src/app/service/stock.service';
 
 import { StocksGraphComponent } from './stocks-graph.component';
 
@@ -8,7 +10,8 @@ describe('StocksGraphComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ StocksGraphComponent ]
+      declarations: [ StocksGraphComponent ],
+      providers: [HttpClientTestingModule, StockService]
     })
     .compileComponents();
   });

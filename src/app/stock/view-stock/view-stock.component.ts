@@ -17,7 +17,7 @@ export class ViewStockComponent implements OnInit {
 
   viewStockForm!: FormGroup;
   companies:any;
-  displayedColumns: string[] = ['companyName', 'price','date','time','delete'];
+  displayedColumns: string[] = ['companyName', 'price','date','time','actions'];
   @ViewChild(MatPaginator)
   paginator!: MatPaginator;
   dataSource:any;
@@ -45,6 +45,20 @@ export class ViewStockComponent implements OnInit {
   onSubmit(){
    
     this.refreshData();
+  }
+
+  toggleUpdate(data:any){
+    data.edit = !data.edit;
+  }
+
+  update(data:any){
+    console.log(data);    
+    this.stockService.update(data).subscribe((response:any)=>{
+      if(response){
+        this.snackbar.openSnackBar("Stock updated successfully","x");
+        this.refreshData();
+      }
+    })
   }
 
   delete(data:any){

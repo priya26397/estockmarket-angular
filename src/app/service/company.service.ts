@@ -6,7 +6,7 @@ import { Injectable } from '@angular/core';
 })
 export class CompanyService {
 
-  url="http://localhost:6093";
+  url="http://localhost:6091";
   constructor(private httpClient: HttpClient ) { }
 
   registerCompany(data:any){
@@ -16,22 +16,22 @@ export class CompanyService {
         Authorization:'Bearer '+token
       })
     }
-    const registerUrl="http://localhost:6092/api/v1.0/command/market/company/register";
+    const registerUrl= this.url+"/estockmarket-command/api/v1.0/command/market/company/register";
     return this.httpClient.post(registerUrl, data,httpOptions);
   }
 
   getCompanyByCode(code:any){
-    const fetchUser=this.url+"/api/v1.0/query/market/company/info/"+code;
+    const fetchUser=this.url+"/estockmarket-query/api/v1.0/query/market/company/info/"+code;
     return this.httpClient.get(fetchUser);
   }
 
   getCompany(){
-    const fetchUser=this.url+"/api/v1.0/query/market/company/getall";
+    const fetchUser=this.url+"/estockmarket-query/api/v1.0/query/market/company/getall";
     return this.httpClient.get(fetchUser);
   }
 
   getCompanyLatestStockPrice(code:any){
-    const fetchUser=this.url+"/api/v1.0/query/market/company/view/"+code;
+    const fetchUser=this.url+"/estockmarket-query/api/v1.0/query/market/company/view/"+code;
     return this.httpClient.get(fetchUser);
   }
 
@@ -42,7 +42,7 @@ export class CompanyService {
         Authorization:'Bearer '+token
       })
     }
-    const registerUrl="http://localhost:6092/api/v1.0/command/market/company/delete/"+code;
+    const registerUrl= this.url+"/estockmarket-command/api/v1.0/command/market/company/delete/"+code;
     return this.httpClient.delete(registerUrl,httpOptions);
   }
 }

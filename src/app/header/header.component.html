@@ -16,6 +16,9 @@
     <button *ngIf="userLogin" (click)=redirect() mat-button class="example-icon" aria-label="Example icon-button with heart icon">
         Logout
     </button>
+    <button *ngIf="!userLogin" routerLink='/register' mat-button class="example-icon" aria-label="Example icon-button with heart icon">
+      Register
+  </button>
     <button *ngIf="!userLogin" routerLink='/login' mat-button class="example-icon" aria-label="Example icon-button with heart icon">
       Login
   </button>

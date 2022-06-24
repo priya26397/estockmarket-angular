@@ -33,7 +33,6 @@ export class ViewCompanyComponent implements OnInit {
   }
 
   delete(data:any){
-    console.log(data);
     this.companyService.deleteCompany(data.companyCode).subscribe((response:any)=>{
       if(response){
         this.snackbar.openSnackBar("Company deleted successfully","x");
